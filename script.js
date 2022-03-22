@@ -1,9 +1,10 @@
-const container = document.querySelector('.container');
+
 let size;
 let sizePrev;
+const container = document.querySelector('.container');
 
 function drawSquare(){
-    size = document.getElementById("size").value;
+    size = Number(document.getElementById("range").value);
     sizePrev = size;                         // Value for field cleaner
     for (let j=1; j <= size; j++){
         const column = document.createElement('div');
@@ -33,8 +34,9 @@ clearButton.addEventListener('click', () => {
 });   
 
 acceptButton.addEventListener('click', () => {   
-    size = document.getElementById("size").value;
-    enterSize();  
+    size = Number(document.getElementById("range").value);
+    clearField();
+    drawSquare(); 
 });   
 
 changeButton.addEventListener('click', () => {   
@@ -52,16 +54,8 @@ function clearField(){
 
 const notValid = document.querySelector('.notValid');
 
-function enterSize(){
-    if (size > 0 && size < 101){
-        clearField();
-        drawSquare();
-        notValid.textContent = ''; 
-    }
-    else {   
-        notValid.textContent = 'Not valid value';
-    } 
-} 
+
+
 
 
 
