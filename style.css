@@ -1,31 +1,100 @@
 body{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    background-image: linear-gradient(to bottom right, red,orange,yellow,green,blue,indigo,violet);
+    background-repeat:space;
+    background-size: cover;
+    background-attachment: fixed;
+    margin:0;
+    text-align: center;
 }
 
-.container{  
+.header, .footer{   
+    font-family: 'Rock Salt', sans-serif;  
+    margin:0;
+    padding:5px 0px;
+    background-image: linear-gradient(to right,rgba(28,28,48,0), rgba(0, 0, 0, 0.3), rgba(28,28,48,0));  
+    color: white;
+}
+
+.header{
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+.footer {
+    font-size:0.7rem;
+    position:fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+.center{
+    padding:15px 0px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.container{
+    flex-shrink: 0;  
     display: flex;
     flex-direction: column;
     width: 500px;
     height: 500px;
     justify-content: stretch;
     align-items: stretch;
-    border:2px solid black;
+    border:2px solid rgb(92, 92, 192);
+    border-radius: 4px;
 }
+
 .column{  
-    flex:1 1 0;
+    flex:1 0 0;
     display: flex;
     justify-content: stretch;
     align-items: stretch;    
 }
 
+.buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    font-family: 'Permanent Marker', sans-serif;
+    font-size: 20px;
+    color: aliceblue;
+}
+
+.clearButton, .acceptButton, .changeButton{
+    font-size: 20px;
+    
+    background-color:rgba(14, 51, 51, 0.5);
+    font-family: 'Permanent Marker', sans-serif;
+    border-radius: 10px;
+    color: aliceblue;
+}
+
+.clearButton{
+    padding:10px 20px;
+}
+
+.acceptButton, .changeButton{
+    padding: 5px 10px;
+}
+
+#size{
+    width: 40px;
+    background-color:rgba(75, 69, 69, 0.5);
+    color: whitesmoke; 
+}
+
 .row{
-    flex:1 1 0;
-    border: 0.5px solid rgb(179, 179, 179);
+    background-color: white;
+    flex:1 0 0;
+    border: 0.5px solid rgb(223, 203, 203, 0.3);
 }
 
 .coloredRow {
     background-color: black;
 }
+

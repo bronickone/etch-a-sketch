@@ -4,13 +4,29 @@
         <meta charset="utf-8">
         <title>Etch-A-Sketch</title>
         <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt|Permanent+Marker|Bangers&effect=neon|outline|anaglyph">
         <script src="./script.js" defer></script>
     </head>
     <body>
-        <h1>Etch-A-Sketch</h1>
-        <div class="container"></div>
-        <div class="buttons">
-            <button class="clear">CLEAR</button>
-        </div>
+        <div class="header font-effect-neon font-effect-anaglyph">Etch-A-Sketch</div>
+            <div class="center">
+                <div class="container"></div>
+                <div class="buttons">
+                    <button class="clearButton">Clear</button>
+                    <div class="colorPanel">
+                        <div class="textColorPanel font-effect-outline">Choose Color</div>
+                        <input type="color" id="color" value="#000000">
+                        <button class="changeButton">Change</button>
+                    </div>
+                    <div class="sizePanel">
+                        <div class="textSizePanel font-effect-outline">Enter Size(1-100)</div>
+                        <input type="text" id="size" class="sizeVal" value="16">
+                        <button class="acceptButton">Accept</button>
+                        <div class="notValid"></div>
+
+                    </div>
+                </div>
+            </div>
+        <div class="footer">broNickOne(c) for The Odin Project 2022</div>
     </body>
 </html>
