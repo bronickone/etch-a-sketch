@@ -1,4 +1,3 @@
-
 let size;
 let sizePrev;
 const container = document.querySelector('.container');
@@ -12,21 +11,23 @@ function drawSquare(){
         container.appendChild(column);   
         for (let i=1; i <= size ; i++) {
             const rowElement = document.createElement('div');
-            rowElement.classList.add('row');  
+            rowElement.classList.toggle('row');  
             column.appendChild(rowElement);
-            rowElement.addEventListener('mousemove', () => {
-                rowElement.classList.add('coloredRow');
-            });   
+            rowElement.addEventListener('mousemove', () => {      
+                rowElement.classList.add('coloredRow');             
+            });
+            rowElement.addEventListener('touchmove', () => {      
+                rowElement.classList.add('coloredRow');             
+            });
         }
     }
 }
 
-drawSquare();
+  drawSquare()
 
 const clearButton = document.querySelector('.clearButton');
 const acceptButton = document.querySelector('.acceptButton');
 const changeButton = document.querySelector('.changeButton');
-const coloredRow = document.querySelectorAll('.coloredRow');
 
 clearButton.addEventListener('click', () => {      
     clearField();
@@ -39,33 +40,36 @@ acceptButton.addEventListener('click', () => {
     drawSquare(); 
 });   
 
-changeButton.addEventListener('click', () => {   
+const changeRange = document.querySelector('#range');
+const textSizePanel = document.querySelector('.textSizePanel');
+
+changeRange.addEventListener('change', () => {
+    let sizeVal = document.getElementById("range").value;
+    textSizePanel.textContent = sizeVal + ' x ' + sizeVal;
+})
+
+changeButton.addEventListener('click', () => { 
+
+    let coloredRowElements = document.querySelectorAll('.row');
+    console.log(coloredRowElements);
     color = document.getElementById("color").value;
-    coloredRow.style.backgroundColor = color;
-    ;     
-});   
+    console.log(color);
+    for (let coloredRowElement of coloredRowElements){
+        coloredRowElement.addEventListener('mousemove', () => {      
+            coloredRowElement.style.backgroundColor = color;             
+        });
+        coloredRowElement.addEventListener('touchmove', () => {      
+            coloredRowElement.style.backgroundColor = color;             
+        });
+
+    }            
+});  
 
 function clearField(){
     for (let j=1; j <= sizePrev; j++){
         const column = document.querySelector('.column')
         container.removeChild(column);
     }
-}
-
-const notValid = document.querySelector('.notValid');
-
-
-
-
-
-
-
-
-
-
-
-function changeColor(){
-
 }
 
 const randColor = () => {
