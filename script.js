@@ -69,7 +69,7 @@ const textSizePanel = document.querySelector('.textSizePanel');
 
 changeRange.addEventListener('change', () => {              //change grid size info field
     let sizeVal = document.getElementById("range").value;
-    textSizePanel.textContent = sizeVal + ' x ' + sizeVal;
+    textSizePanel.textContent = sizeVal + '  x  ' + sizeVal;
 });
 
 
