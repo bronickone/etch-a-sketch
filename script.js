@@ -1,8 +1,8 @@
 let size;
 let sizePrev;
-const container = document.querySelector('.container');
-
 let colorTrigger = false;
+
+const container = document.querySelector('.container');
 
 container.addEventListener('mousedown', () => {      
     colorTrigger = true;  
@@ -12,29 +12,51 @@ container.addEventListener('mouseup', () => {
     colorTrigger = false;  
 });
 
-function draw(){
-    let coloredRowElements = document.querySelectorAll('.row');
+
+
+container.addEventListener('touchstart', () => {      
+    colorTrigger = true;  
+});   
+
+container.addEventListener('touchend', () => {      
+    colorTrigger = false;  
+});
+
+
+
+
+function draw(){                                                 //draw function with current color
+    let coloredRowElements = document.querySelectorAll('.row'); //Create list of grid elements
     color = document.getElementById("color").value;
     for (let coloredRowElement of coloredRowElements){
+        
         coloredRowElement.addEventListener('mousedown', () => {
             coloredRowElement.style.backgroundColor = color;             
         })  
+        
         coloredRowElement.addEventListener('mousemove', () => {
             if (colorTrigger)
             coloredRowElement.style.backgroundColor = color;
                      
         })
 
+        coloredRowElement.addEventListener('touchmove', () => {
+            if (colorTrigger)
+            coloredRowElement.style.backgroundColor = color;
+                     
+        })
     }            
 }
 
-function drawSquare(){
+function drawSquare(){                  // draw grid(column-direction flexbox of row-direction flexboxes) 
     size = Number(document.getElementById("range").value);
-    sizePrev = size;                         // Value for field cleaner
+    sizePrev = size;                    // Value for field cleaner
+    
     for (let j=1; j <= size; j++){
         const column = document.createElement('div');
         column.classList.add('column');
         container.appendChild(column);   
+        
         for (let i=1; i <= size ; i++) {
             const rowElement = document.createElement('div');
             rowElement.classList.toggle('row');  
@@ -44,18 +66,18 @@ function drawSquare(){
     draw();
 }
 
-  drawSquare()
+  drawSquare() //initial draw grid
 
 const clearButton = document.querySelector('.clearButton');
 const acceptButton = document.querySelector('.acceptButton');
 const changeButton = document.querySelector('.changeButton');
 
-clearButton.addEventListener('click', () => {      
+clearButton.addEventListener('click', () => {             
     clearField();
     drawSquare();    
 });   
 
-acceptButton.addEventListener('click', () => {   
+acceptButton.addEventListener('click', () => {              //change grid size button
     size = Number(document.getElementById("range").value);
     clearField();
     drawSquare(); 
@@ -64,13 +86,13 @@ acceptButton.addEventListener('click', () => {
 const changeRange = document.querySelector('#range');
 const textSizePanel = document.querySelector('.textSizePanel');
 
-changeRange.addEventListener('change', () => {
+changeRange.addEventListener('change', () => {              //change grid size info field
     let sizeVal = document.getElementById("range").value;
     textSizePanel.textContent = sizeVal + ' x ' + sizeVal;
 });
 
 
-changeButton.addEventListener('click', () => { 
+changeButton.addEventListener('click', () => {       //change color button
     draw()
 });  
 
