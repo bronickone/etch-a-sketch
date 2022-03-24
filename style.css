@@ -104,7 +104,8 @@ body{
 .row{
     background-color: white;
     flex:1 0 0;
-    border: 0px solid rgba(255, 225, 225, 0.377);
+    border: 0.1pc solid rgba(255, 225, 225, 0.377);
+    user-select: none;
 }
 
 .coloredRow {

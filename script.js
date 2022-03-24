@@ -2,6 +2,32 @@ let size;
 let sizePrev;
 const container = document.querySelector('.container');
 
+let colorTrigger = false;
+
+container.addEventListener('mousedown', () => {      
+    colorTrigger = true;  
+});   
+
+container.addEventListener('mouseup', () => {      
+    colorTrigger = false;  
+});
+
+function draw(){
+    let coloredRowElements = document.querySelectorAll('.row');
+    color = document.getElementById("color").value;
+    for (let coloredRowElement of coloredRowElements){
+        coloredRowElement.addEventListener('mousedown', () => {
+            coloredRowElement.style.backgroundColor = color;             
+        })  
+        coloredRowElement.addEventListener('mousemove', () => {
+            if (colorTrigger)
+            coloredRowElement.style.backgroundColor = color;
+                     
+        })
+
+    }            
+}
+
 function drawSquare(){
     size = Number(document.getElementById("range").value);
     sizePrev = size;                         // Value for field cleaner
@@ -13,14 +39,14 @@ function drawSquare(){
             const rowElement = document.createElement('div');
             rowElement.classList.toggle('row');  
             column.appendChild(rowElement);
-            rowElement.addEventListener('mousemove', () => {      
-                rowElement.classList.add('coloredRow');             
-            });
-            rowElement.addEventListener('touchmove', () => {      
-                rowElement.classList.add('coloredRow');             
-            });
+            //color = document.getElementById("color").value;
+            //rowElement.addEventListener('mousemove', () => {
+            //    if (colorTrigger)    
+            //    rowElement.style.backgroundColor = color;              
+            //});
         }
     }
+    draw();
 }
 
   drawSquare()
@@ -46,23 +72,11 @@ const textSizePanel = document.querySelector('.textSizePanel');
 changeRange.addEventListener('change', () => {
     let sizeVal = document.getElementById("range").value;
     textSizePanel.textContent = sizeVal + ' x ' + sizeVal;
-})
+});
+
 
 changeButton.addEventListener('click', () => { 
-
-    let coloredRowElements = document.querySelectorAll('.row');
-    console.log(coloredRowElements);
-    color = document.getElementById("color").value;
-    console.log(color);
-    for (let coloredRowElement of coloredRowElements){
-        coloredRowElement.addEventListener('mousemove', () => {      
-            coloredRowElement.style.backgroundColor = color;             
-        });
-        coloredRowElement.addEventListener('touchmove', () => {      
-            coloredRowElement.style.backgroundColor = color;             
-        });
-
-    }            
+    draw()
 });  
 
 function clearField(){
