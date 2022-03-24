@@ -39,11 +39,6 @@ function drawSquare(){
             const rowElement = document.createElement('div');
             rowElement.classList.toggle('row');  
             column.appendChild(rowElement);
-            //color = document.getElementById("color").value;
-            //rowElement.addEventListener('mousemove', () => {
-            //    if (colorTrigger)    
-            //    rowElement.style.backgroundColor = color;              
-            //});
         }
     }
     draw();
@@ -86,10 +81,10 @@ function clearField(){
     }
 }
 
-const randColor = () => {
-    const randomColor = Math.floor(Math.random()*16777215).toString(16);
-    document.body.style.backgroundColor = "#" + randomColor;
-}
+//const randColor = () => {
+//    const randomColor = Math.floor(Math.random()*16777215).toString(16);
+//    document.body.style.backgroundColor = "#" + randomColor;
+//}
   
 
 
