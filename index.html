@@ -2,7 +2,6 @@
 <html>
     <head>
         <meta charset="utf-8">
-         <meta name="viewport" content="width=device-width, initial-scale=1.0" >
         <title>Etch-A-Sketch</title>
         <link rel="stylesheet" href="./style.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt|Permanent+Marker|Bangers&effect=neon|outline|anaglyph">
@@ -10,24 +9,28 @@
     </head>
     <body>
         <div class="header font-effect-neon font-effect-anaglyph">Etch-A-Sketch</div>
-            <div class="center">
+            
+        <div class="center">
                 <div class="container"></div>
+
                 <div class="buttons">
-                    <button class="clearButton">Clear</button>
+                    <button class="clearButton font-effect-outline">Clear</button>
+
                     <div class="colorPanel">
                         <div class="textColorPanel font-effect-outline">Choose Color</div>
                         <input type="color" id="color" value="#000000">
-                        <button class="changeButton">Change</button>
+                        <button class="changeButton font-effect-outline">Change</button>
                     </div>
+
                     <div class="sizePanel">
                         <div class="textSizePanel font-effect-outline">16 x 16</div>
-                        <input type="range" id="range" name="range" 
-                         min="1" max="100" value="16" step="1">
-                        <button class="acceptButton">Adjust</button>
-                        
+                        <input type="range" id="range" min="1" max="100" value="16" step="1">
+                        <button class="acceptButton font-effect-outline">Adjust</button>    
                     </div>
                 </div>
             </div>
+
         <div class="footer">broNickOne(c) for The Odin Project 2022</div>
+
     </body>
 </html>

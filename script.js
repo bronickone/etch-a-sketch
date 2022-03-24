@@ -1,5 +1,3 @@
-let size;
-let sizePrev;
 let colorTrigger = false;
 
 const container = document.querySelector('.container');
@@ -12,19 +10,6 @@ container.addEventListener('mouseup', () => {
     colorTrigger = false;  
 });
 
-
-
-container.addEventListener('touchstart', () => {      
-    colorTrigger = true;  
-});   
-
-container.addEventListener('touchend', () => {      
-    colorTrigger = false;  
-});
-
-
-
-
 function draw(){                                                 //draw function with current color
     let coloredRowElements = document.querySelectorAll('.row'); //Create list of grid elements
     color = document.getElementById("color").value;
@@ -36,19 +21,15 @@ function draw(){                                                 //draw function
         
         coloredRowElement.addEventListener('mousemove', () => {
             if (colorTrigger)
-            coloredRowElement.style.backgroundColor = color;
-                     
-        })
-
-        coloredRowElement.addEventListener('touchmove', () => {
-            if (colorTrigger)
-            coloredRowElement.style.backgroundColor = color;
-                     
+            coloredRowElement.style.backgroundColor = color;                 
         })
     }            
 }
 
-function drawSquare(){                  // draw grid(column-direction flexbox of row-direction flexboxes) 
+let size;
+let sizePrev;
+
+function drawSquare(){                  // draw grid function(column-direction flexbox of row-direction flexboxes) 
     size = Number(document.getElementById("range").value);
     sizePrev = size;                    // Value for field cleaner
     
@@ -66,7 +47,7 @@ function drawSquare(){                  // draw grid(column-direction flexbox of
     draw();
 }
 
-  drawSquare() //initial draw grid
+  drawSquare() //initial grid buiding
 
 const clearButton = document.querySelector('.clearButton');
 const acceptButton = document.querySelector('.acceptButton');
