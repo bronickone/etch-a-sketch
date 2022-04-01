@@ -37,7 +37,8 @@ body{
     gap: 100px;
 }
 
-.container{   
+.container{
+    background-color: rgb(141, 141, 141); 
     flex-shrink: 0;  
     display: flex;
     flex-direction: column;
@@ -73,7 +74,7 @@ body{
   
 }
 
-.clearButton, .acceptButton, .changeButton, .randomButton{
+.clearButton, .acceptButton, .changeButton, .randomButton, .gridOn{
     font-size: 20px;
     background-color:rgba(14, 51, 51, 0.5);
     font-family: 'Permanent Marker', sans-serif;
@@ -109,9 +110,15 @@ body{
 .row{
     background-color: white;
     flex:1 0 0;
-    border: 0.1pc solid rgba(255, 225, 225, 0.377);
+    /* border: 0.1pc solid rgba(255, 225, 225, 0.377); */
     user-select: none;
 }
 
+.container:hover{
+    cursor:crosshair;
+}
+.row:hover{
+    opacity: 70%;
+}
 
 
