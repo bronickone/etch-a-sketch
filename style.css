@@ -118,7 +118,7 @@ body{
     cursor:crosshair;
 }
 .row:hover{
-    opacity: 70%;
+    opacity:50%;
 }
 
 
