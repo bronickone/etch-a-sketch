@@ -22,7 +22,7 @@ body{
 
 .footer{
     font-size:0.7rem;
-    /*position:fixed;*/
+    position:static;
     bottom: 0;
     left: 0;
     right: 0;
@@ -73,7 +73,7 @@ body{
   
 }
 
-.clearButton, .acceptButton, .changeButton{
+.clearButton, .acceptButton, .changeButton, .randomButton{
     font-size: 20px;
     background-color:rgba(14, 51, 51, 0.5);
     font-family: 'Permanent Marker', sans-serif;
@@ -86,7 +86,9 @@ body{
   
 }
 
-.acceptButton, .changeButton{
+
+
+.acceptButton, .changeButton, .randomButton{
     padding: 5px 10px;
   
 }

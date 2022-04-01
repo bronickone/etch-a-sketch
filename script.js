@@ -10,9 +10,9 @@ container.addEventListener('mouseup', () => {
     colorTrigger = false;  
 });
 
-function draw(){                                                 //draw function with current color
+function draw(color){                                           //draw function with current color
     let coloredRowElements = document.querySelectorAll('.row'); //Create list of grid elements
-    color = document.getElementById("color").value;
+    
     for (let coloredRowElement of coloredRowElements){
         
         coloredRowElement.addEventListener('mousedown', () => {
@@ -44,7 +44,8 @@ function drawSquare(){                  // draw grid function(column-direction f
             column.appendChild(rowElement);
         }
     }
-    draw();
+    color = document.getElementById("color").value;
+    draw(color);
 }
 
   drawSquare() //initial grid buiding
@@ -52,8 +53,16 @@ function drawSquare(){                  // draw grid function(column-direction f
 const clearButton = document.querySelector('.clearButton');
 const acceptButton = document.querySelector('.acceptButton');
 const changeButton = document.querySelector('.changeButton');
+const randomButton = document.querySelector('.randomButton');
 
-clearButton.addEventListener('click', () => {             
+function clearField(){
+    for (let j=1; j <= sizePrev; j++){
+        const column = document.querySelector('.column')
+        container.removeChild(column);
+    }
+}
+
+clearButton.addEventListener('click', () => {             //field clear button
     clearField();
     drawSquare();    
 });   
@@ -73,21 +82,18 @@ changeRange.addEventListener('change', () => {              //change grid size i
 });
 
 
-changeButton.addEventListener('click', () => {       //change color button
-    draw()
+changeButton.addEventListener('click', () => {              //change color button
+    color = document.getElementById("color").value;     
+    draw(color);
 });  
 
-function clearField(){
-    for (let j=1; j <= sizePrev; j++){
-        const column = document.querySelector('.column')
-        container.removeChild(column);
-    }
-}
 
-//const randColor = () => {
-//    const randomColor = Math.floor(Math.random()*16777215).toString(16);
-//    document.body.style.backgroundColor = "#" + randomColor;
-//}
+
+
+const randColor = () => {
+    const randomColor = Math.floor(Math.random()*16777215).toString(16);
+    document.body.style.backgroundColor = "#" + randomColor;
+}
   
 
 
