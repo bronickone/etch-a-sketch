@@ -26,6 +26,14 @@ function draw(color){                                           //draw function 
     }            
 }
 
+function drawGrid(flag){                                           
+    let coloredRowElements = document.querySelectorAll('.row'); //Create list of grid elements
+    
+    for (let coloredRowElement of coloredRowElements){
+            coloredRowElement.style.borderWidth = flag;                       
+    }            
+}
+
 let size;
 let sizePrev;
 
@@ -54,6 +62,14 @@ const clearButton = document.querySelector('.clearButton');
 const acceptButton = document.querySelector('.acceptButton');
 const changeButton = document.querySelector('.changeButton');
 const randomButton = document.querySelector('.randomButton');
+const checkBox = document.querySelector('input[type=checkbox]');    
+
+let flag;
+
+checkBox.addEventListener('change', function (e) {
+    localStorage.status = e.target.checked ? flag = "0.1px" : flag = "0";
+    drawGrid(flag);
+  });
 
 function clearField(){
     for (let j=1; j <= sizePrev; j++){
