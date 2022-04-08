@@ -26,11 +26,11 @@ function draw(color){                                           //draw function 
     }            
 }
 
-function drawGrid(flag){                                           
-    let coloredRowElements = document.querySelectorAll('.row'); //Create list of grid elements
+function drawGrid(flag){                                         //switch grid function  
+    let rowElements = document.querySelectorAll('.row'); //Create list of grid elements
     
-    for (let coloredRowElement of coloredRowElements){
-            coloredRowElement.style.borderWidth = flag;                       
+    for (let rowElement of rowElements){
+            rowElement.style.borderWidth = flag;                       
     }            
 }
 
@@ -66,7 +66,7 @@ const checkBox = document.querySelector('input[type=checkbox]');
 
 let flag;
 
-checkBox.addEventListener('change', function (e) {
+checkBox.addEventListener('change', function (e) {            //switch grid button
     localStorage.status = e.target.checked ? flag = "0.1px" : flag = "0";
     drawGrid(flag);
   });
@@ -80,13 +80,15 @@ function clearField(){
 
 clearButton.addEventListener('click', () => {             //field clear button
     clearField();
-    drawSquare();    
+    drawSquare();
+    drawGrid(flag);    
 });   
 
 acceptButton.addEventListener('click', () => {              //change grid size button
     size = Number(document.getElementById("range").value);
     clearField();
-    drawSquare(); 
+    drawSquare();
+    drawGrid(flag);   
 });   
 
 const changeRange = document.querySelector('#range');
