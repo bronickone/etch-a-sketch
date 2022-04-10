@@ -1,16 +1,21 @@
+html, body{
+  height: 100%;
+}
+
 body{
-    
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
     background-image: linear-gradient(to bottom, rgb(0, 38, 255),yellow);
-    background-repeat:space;
-    background-size: cover;
     background-attachment: fixed;
     margin:0;
     text-align: center;
+   
 }
 
 .header, .footer{   
     font-family: 'Rock Salt', sans-serif;  
-    margin:0;
+   
     padding:3px 0px;
     background-image: linear-gradient(to right,rgba(28,28,48,0), rgba(0, 0, 0, 0.3), rgba(28,28,48,0));      
 }
@@ -22,21 +27,23 @@ body{
 }
 
 .footer{
+    flex-shrink: 0; 
     font-size:0.7rem;
-    position:fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    
+   
     color: rgb(0, 0, 0);
     
 }
 
 .center{
+    top:20px;
     padding:15px 0px;
     display:flex;
     justify-content: center;
     align-items: center;
     gap: 100px;
+   
+   
 }
 
 .container{
@@ -92,8 +99,6 @@ body{
     padding:5px 17px;
   
 }
-
-
 
 .acceptButton, .changeButton, .randomButton{
     padding: 5px 10px;
