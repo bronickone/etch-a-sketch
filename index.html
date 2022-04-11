@@ -7,39 +7,54 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt|Permanent+Marker|Bangers&effect=neon|outline|anaglyph">
         <script src="./script.js" defer></script>
     </head>
-    <body>
+    <body class="body">
         <div class="header font-effect-neon font-effect-anaglyph">Etch-A-Sketch</div>
             
         <div class="center">
                 <div class="container"></div>
 
                 <div class="buttons">
-                    <button class="clearButton font-effect-outline">Clear</button>
                    
-                    <ul>
-                        <li>
-                            <div class="textChangePanel font-effect-outline">Grid</div>
-                        </li>
-                        <li>
-                            <input type="checkbox" name="power" id="power" checked>
-                            <label for="power"><span class="on">On</span> <span class="off">Off</span></label>
-                        </li>
-                    </ul>
-                    <div class="colorPanel">
-                        <div class="textColorPanel font-effect-outline">Choose Color</div>
-                        <input type="color" id="color" value="#000000">
-                        <button class="changeButton font-effect-outline">Change</button>
-                    </div>
 
-                    <div class="sizePanel">
+                    <fieldset class="buttonField sizePanel">
+                        <legend class="textSize font-effect-outline">Resolution</legend>
                         <div class="textSizePanel font-effect-outline">16 x 16</div>
                         <input type="range" id="range" min="2" max="100" value="16" step="1">
-                        <button class="acceptButton font-effect-outline">Adjust</button>    
-                    </div>
+                        <!-- <button class="acceptButton font-effect-outline">Adjust</button>     -->
+                    </fieldset>
+                    
+                    
+                       
+                        <fieldset class="buttonField">
+                            <legend class="textChangePanel font-effect-outline">Grid</legend>    
+                            <div class="check">
+                                <input type="checkbox" name="power" id="power" checked>
+                                <label for="power">
+                                    <span class="on font-effect-outline">On</span> 
+                                    <span class="off font-effect-outline">Off</span>
+                                </label>
+                            </div>
+                        </fieldset>
+
+                  
+
+                    <fieldset class="buttonField  colorPanel">
+                        <legend class="textColorPanel font-effect-outline">Color</legend>
+                        <input type="color" id="color" value="#000000">
+                        <!-- <button class="changeButton font-effect-outline">Change</button> -->
+                    </fieldset>
+                    
+                    <button class=" clearButton font-effect-outline">Clear</button>
+                    
                 </div>
         </div>
 
-        <div class="footer">Copyright © 2022 broNickOne for The Odin Project </div>
+        <div class="footer">
+            Copyright © 2022 
+            <span class="uaFlag"></span>
+            broNickOne for The Odin Project   
+            
+        </div>
 
     </body>
 </html>

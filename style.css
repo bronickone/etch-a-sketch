@@ -6,7 +6,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content:space-between;
-    background-image: linear-gradient(to bottom, rgb(0, 38, 255),yellow);
+    background-image: linear-gradient(to bottom, rgba(14, 14, 14, 0.616) 5%,rgb(230, 230, 230) 90%);
     background-attachment: fixed;
     margin:0;
     text-align: center;
@@ -14,27 +14,40 @@ body{
 }
 
 .header, .footer{   
-    font-family: 'Rock Salt', sans-serif;  
+    font-family: 'Rock Salt', sans-serif;
    
     padding:3px 0px;
-    background-image: linear-gradient(to right,rgba(28,28,48,0), rgba(0, 0, 0, 0.3), rgba(28,28,48,0));      
+         
 }
 
 .header{
+    
     font-weight: 900;
     font-size: 1.5rem;
-    color: white;
-}
+    color: rgb(0, 0, 0);
+    /* background-image: linear-gradient(to right,rgba(255, 255, 255, 0), rgba(0, 4, 223, 0.432), rgb(141, 141, 141), rgba(0, 4, 223, 0.432), rgba(28,28,48,0));   */
+   
+  }
 
 .footer{
+    
     flex-shrink: 0; 
     font-size:0.7rem;
-    
+    gap:10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(0, 5, 46);
    
-    color: rgb(0, 0, 0);
-    
 }
 
+.uaFlag{
+  height: 30px;
+  width: 30px;
+  display:inline-block;
+  background: linear-gradient(to bottom, rgb(0, 26, 255) 50%, rgb(251, 255, 0) 50%);
+  border-radius: 100%;
+}
 .center{
     top:20px;
     padding:15px 0px;
@@ -56,10 +69,12 @@ body{
     justify-content: stretch;
     align-items: stretch;
     border:10px;
-    border-color:rgb(110, 67, 67);
+    border-color:rgb(0, 0, 0);
     border-radius:10px;
-    border-style:ridge;
-    box-shadow: 0 0 50px rgb(12, 12, 12);
+    border-style: solid;
+    box-shadow: 0 0 30px rgb(12, 12, 12);
+    
+  
 }
 
 .column{  
@@ -70,29 +85,45 @@ body{
 }
 
 .buttons{
+    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap:20px;
     font-family: 'Permanent Marker', sans-serif;
     font-size: 20px;
-    color: aliceblue;
+    color: rgb(2, 64, 119);
     
 }
 
+.buttonField{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:150px;
+  height:80px;
+  padding:15px;
+  border: 3px groove rgba(214, 214, 214, 0.452);
+  
+  border-radius: 10px;
+}
+
 .textSizePanel{
+  
     font-family: 'Bangers', sans-serif;
   
 }
 
 .clearButton, .acceptButton, .changeButton, .randomButton, .gridOn{
     font-size: 20px;
-    background-color:rgba(14, 51, 51, 0.5);
+    background-color:rgba(14, 51, 51);
     font-family: 'Permanent Marker', sans-serif;
     border-radius: 10px;
-    color: aliceblue;
+    
     box-shadow: 0px 0px 10px grey;
+    cursor: pointer;
 }
 
 .clearButton{
@@ -130,23 +161,25 @@ body{
 
 .container:hover{
     cursor:crosshair;
+
 }
 .row:hover{
     opacity:50%;
 }
 
+input{
+  cursor:pointer;
+}
 
 
 
 
 
 
- ul{
-     padding-inline-start: 0;
- }
 
 
-  li {
+
+  .check {
     width: 100px;
     display: flex;
     align-items: center;
@@ -183,7 +216,7 @@ label {
     border-radius: 12px;
     border: 2px solid black;
     background: #eee;
-    transition: all 0.4s;
+    transition: all 0.1s;
     box-shadow: 0px 0px 10px grey
   }
 
@@ -201,7 +234,7 @@ label {
     position: absolute;
     top: 7px;
     left: 22%;
-    transition: all 0.4s;
+    transition: all 0.2s;
   }
 
   /*
@@ -210,13 +243,13 @@ label {
   */
 
   input[type="checkbox"]:checked {
-    background-color: #ffaa00;
-    transition: all 0.4s;
+    background-color: #f8a73d;
+    transition: all 0.2s;
   }
 
   input[type="checkbox"]:checked::before {
     left: 42%;
-    transition: all 0.4s;
+    transition: all 0.2s;
   }
 
   /*

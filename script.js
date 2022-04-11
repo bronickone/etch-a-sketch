@@ -1,6 +1,8 @@
 let colorTrigger = false;
 
 const container = document.querySelector('.container');
+const body = document.querySelector('.body');
+
 
 container.addEventListener('mousedown', () => {      
     colorTrigger = true;  
@@ -59,9 +61,9 @@ function drawSquare(){                  // draw grid function(column-direction f
   drawSquare() //initial grid buiding
 
 const clearButton = document.querySelector('.clearButton');
-const acceptButton = document.querySelector('.acceptButton');
-const changeButton = document.querySelector('.changeButton');
-const randomButton = document.querySelector('.randomButton');
+// const acceptButton = document.querySelector('.acceptButton');
+// const changeButton = document.querySelector('.changeButton');
+// const randomButton = document.querySelector('.randomButton');
 const checkBox = document.querySelector('input[type=checkbox]');    
 
 let flag;
@@ -84,26 +86,43 @@ clearButton.addEventListener('click', () => {             //field clear button
     drawGrid(flag);    
 });   
 
-acceptButton.addEventListener('click', () => {              //change grid size button
-    size = Number(document.getElementById("range").value);
-    clearField();
-    drawSquare();
-    drawGrid(flag);   
-});   
+// acceptButton.addEventListener('click', () => {              //change grid size button
+//     size = Number(document.getElementById("range").value);
+//     clearField();
+//     drawSquare();
+//     drawGrid(flag);   
+// });   
 
 const changeRange = document.querySelector('#range');
 const textSizePanel = document.querySelector('.textSizePanel');
 
-changeRange.addEventListener('change', () => {              //change grid size info field
+changeRange.addEventListener('change', () => {              //change grid size range
     let sizeVal = document.getElementById("range").value;
     textSizePanel.textContent = sizeVal + '  x  ' + sizeVal;
+    size = Number(document.getElementById("range").value);
+    clearField();
+    drawSquare();
+    drawGrid(flag);   
 });
 
 
-changeButton.addEventListener('click', () => {              //change color button
+// changeButton.addEventListener('click', () => {              //change color button
+//     color = document.getElementById("color").value;     
+//     draw(color);
+//     container.style.boxShadow =`0 0 30px ${color}`;    
+// });  
+
+const colorPicker = document.querySelector('#color');
+
+colorPicker.addEventListener('change', () => {    //change color picker
     color = document.getElementById("color").value;     
     draw(color);
-});  
+    container.style.boxShadow =`0 0 30px ${color}`;
+    container.style.borderColor = color;  
+} )
+
+
+
 
 
 
